@@ -1,0 +1,38 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Typecheck on save",
+      "trigger": "PostFileSave",
+      "matcher": "src/.*\\.(ts|tsx)$",
+      "action": { "type": "command", "command": "npx tsc --noEmit --pretty" },
+      "timeout": 90,
+      "enabled": true
+    },
+    {
+      "name": "Run tests on save",
+      "description": "Runs the whole suite. The playbook used vitest related with ${FILEPATH}, but the Kiro docs do not document that variable.",
+      "trigger": "PostFileSave",
+      "matcher": "src/.*\\.(ts|tsx)$",
+      "action": { "type": "command", "command": "npm test" },
+      "timeout": 90,
+      "enabled": true
+    },
+    {
+      "name": "Accessibility lint",
+      "trigger": "PostFileSave",
+      "matcher": "src/(ui|navigation|app)/.*\\.tsx?$",
+      "action": { "type": "command", "command": "npm run lint:a11y" },
+      "timeout": 90,
+      "enabled": true
+    },
+    {
+      "name": "Determinism check",
+      "trigger": "PostFileSave",
+      "matcher": "src/(parser|sonification)/.*\\.ts$",
+      "action": { "type": "command", "command": "npm run test:determinism" },
+      "timeout": 90,
+      "enabled": true
+    }
+  ]
+}

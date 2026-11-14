@@ -1,0 +1,25 @@
+{
+  "version": "v1",
+  "hooks": [
+    {
+      "name": "Tests for new source files",
+      "trigger": "PostFileCreate",
+      "matcher": "src/.*\\.(ts|tsx)$",
+      "action": {
+        "type": "agent",
+        "prompt": "A new source file was just created. If it is a module file, create a matching unit test file next to it. If the module's requirements.md has [PBT] requirements that this file implements, also create a <module>.property.test.ts stub that cites the requirement ids. Follow .kiro/steering/testing.md. Do not edit any other file."
+      },
+      "enabled": true
+    },
+    {
+      "name": "Spec design changed",
+      "trigger": "PostFileSave",
+      "matcher": "\\.kiro/specs/.*/design\\.md$",
+      "action": {
+        "type": "agent",
+        "prompt": "A design.md just changed. Compare it with .kiro/steering/contracts.md and the other specs. List every name, type, or signature that now disagrees and which agent owns each. Do not edit anything. Report the list."
+      },
+      "enabled": true
+    }
+  ]
+}

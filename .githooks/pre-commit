@@ -1,0 +1,3 @@
+#!/bin/sh
+# Covers manual edits: Kiro file hooks only fire on agent changes.
+exec npm run check
