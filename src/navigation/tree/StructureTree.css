@@ -1,0 +1,39 @@
+/* Focus indicator: 3 px outline plus offset, never color alone (N-31).
+   The ring and background tokens come from the UI themes; the fallbacks
+   below are the high-contrast pair and are checked in tests. */
+.structure-tree,
+.structure-tree ul {
+  list-style: none;
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+.structure-tree {
+  padding-left: 0;
+}
+
+.structure-tree [role="treeitem"] {
+  cursor: default;
+}
+
+.structure-tree [role="treeitem"]:focus {
+  outline: 3px solid var(--focus-ring, #ffff00);
+  outline-offset: 2px;
+}
+
+.structure-tree [role="treeitem"]:focus > .tree-label {
+  text-decoration: underline;
+}
+
+.structure-tree .tree-error {
+  font-weight: bold;
+  margin-left: 0.5rem;
+}
+
+.structure-tree .tree-error::before {
+  content: "[";
+}
+
+.structure-tree .tree-error::after {
+  content: "]";
+}
