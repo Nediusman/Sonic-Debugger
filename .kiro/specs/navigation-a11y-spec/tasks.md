@@ -20,7 +20,7 @@ Blocked until answered: N-T6 final letters (Q-N1), N-T1 (Q-N3).
   Tree literals as fixtures. Reqs: N-1, N-2, N-3, N-4, N-15.
 - [x] **N-T3 announce.** `announce.ts` over parser `describeNode`. Reqs:
   N-16.
-- [ ] **N-T4 (blocked on axe: no DOM library installed; everything else done) StructureTree component (arrows only).** Render ARIA tree
+- [ ] **N-T4 (jsdom axe passes; real-browser axe reports label-content-name-mismatch on an expanded treeitem, see docs/a11y-checks.md) StructureTree component (arrows only).** Render ARIA tree
   (N-27 to N-29), roving tabindex, `aria-label` = `announce`, focus
   follows state, one Tab stop, visible focus style, `ArrowDown` and
   `ArrowUp`. axe and `lint:a11y` clean. Export from `index.ts`. Reqs: N-17,
@@ -51,7 +51,7 @@ Handoff after N-T4: the UI agent can mount the tree.
 - [x] **N-T12 Property tests.** NV-1 to NV-11 in
   `navigation.property.test.ts`; regression fixtures; findings logged in
   `docs/pbt-findings.md`. Reqs: all [PBT].
-- [ ] **N-T13 (axe and jsdom not installed; ARIA and focus CSS checks done) Component a11y tests.** axe on the rendered tree in each theme
+- [ ] **N-T13 (tests written and passing in `tests/tree.a11y.test.tsx`; blocked on the same N-T4 finding) Component a11y tests (`tests/tree.a11y.test.tsx`; jsdom axe skips contrast, which `ui.property.test.ts` UP-4 and the browser axe run cover).** axe on the rendered tree in each theme
   class, ARIA attribute checks, focus indicator CSS contrast check against
   the theme tokens (tokens from ui-spec). Reqs: N-28, N-29, N-31, N-32.
 - [x] **N-T14 Docs.** `src/navigation/README.md` with the key map table and

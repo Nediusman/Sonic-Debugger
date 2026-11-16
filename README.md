@@ -34,9 +34,11 @@ Built for Kiroween 2026 (Frankenstein category).
 | ? (Shift plus Slash) | Show the key list |
 | Ctrl plus Enter | Run the code (editor only) |
 
+| Settings, Open Python file, Load an example with a bug, Run (R), Hear it again (N) | Buttons only (Run also has R and Ctrl plus Enter) |
+
 Type-ahead is not supported. Keys that combine Ctrl, Alt or Meta are never bound. Every command is also a labeled button.
 
-See `src/navigation/README.md`.
+See `src/navigation/README.md`. Release checks are recorded in `docs/a11y-checks.md`.
 
 ## License
 

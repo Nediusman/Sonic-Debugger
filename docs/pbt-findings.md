@@ -43,3 +43,11 @@ Failures found while writing the tests:
 | NP-7 | failing run with type `""` | Test bug: `JSON.stringify` output always contains braces. Fixed to check the text fields | Yes |
 | NP-7 (side effect) | same run | Product wording bug: the generic cause read "Python reported a error" for an empty type. Reworded to "an error named {type}", with "unknown" for an empty type | Yes, with an empty-type case; `encyclopedia.test.ts` now covers it |
 No counterexample reached the module logic otherwise, so `src/narration/fixtures/` has no regressions folder.
+## UI (ui.property.test.ts)
+Run: 200 cases per property (300 for contrast), fast-check 4.10.2. UP-1 to UP-5 are implemented. UP-6 (random rendered states) is covered by one example-based tab order test in `app.test.tsx`, not a property.
+| Property | Minimal counterexample | Root cause | Unit test would have caught it? |
+| --- | --- | --- | --- |
+| UP-5 | `runStarted`, then `fileOpened` | Product bug: opening a file while a run was in progress reset the status to idle, so the run result was then ignored. Fixed: the run state is kept while running | Maybe |
+| UP-5 | `runStarted`, `runFinished`, `fileOpened` | Spec gap: U-5 resets the run on open, which moves finished or failed to idle. The property now allows that one transition | No |
+| UP-4 | `focusRing` on `accent` | Test pair was wrong: the ring sits 2 px outside the control, so it never touches the accent fill. Pair removed | Yes |
+| UP-2 | empty narration fields | Test bug: callback returned an `expect` result. Fixed with a block body | Yes |

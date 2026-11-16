@@ -14,23 +14,23 @@ Needs from the user before starting: Q-U2, Q-U6 (devDependencies), Q-U1.
 
 ## Slice 1: smallest end-to-end
 
-- [ ] **U-T1 Shell and live regions.** `src/app/App.tsx` and `src/ui/`:
+- [x] **U-T1 Shell and live regions.** `src/app/App.tsx` and `src/ui/`:
   skip link, header, three regions with headings, footer, the two live regions
   and `announce` helper with the repeat trick, `AppServices` interface and
   `appReducer` skeleton, fake services. Default theme tokens, visible focus.
   Reqs: U-1, U-2, U-3, U-27, U-28.
-- [ ] **U-T2 Editor and run with a stub.** Labeled textarea, line count,
+- [x] **U-T2 Editor and run with a stub.** Labeled textarea, line count,
   `Run (R)` button, `Ctrl+Enter`, `Running` and `Finished` messages and
   output `<pre>`, using a fake `runCode`. `messages.ts` with its property
   test. Reqs: U-8, U-9, U-14, U-15, U-18, U-29.
-- [ ] **U-T3 Tree from the parser.** Wire real `parse` and
+- [x] **U-T3 Tree from the parser.** Wire real `parse` and
   `StructureTree`; parse on edit with the 300 ms debounce and the
   `Structure updated` message; syntax issue list. Needs P-T4, N-T4.
   Reqs: U-10, U-11.
-- [ ] **U-T4 Error flow with offline narration.** Wire `narrate`; assertive
+- [x] **U-T4 Error flow with offline narration.** Wire `narrate`; assertive
   message in the U-16 order; explanation fields; `Error here` via
   `errorNodeId`; `E` and `Jump to error`. Needs E-T4. Reqs: U-16, U-17, U-19.
-- [ ] **U-T5 Error cue and Stop.** Lazy `AudioContext` in a gesture handler,
+- [x] **U-T5 Error cue and Stop.** Lazy `AudioContext` in a gesture handler,
   `sonifyError` plays after a failed run, `Escape` / `S` / `Stop` stop sound
   and speech, `Sound stopped` message. Needs S-T4, S-T8 (before S-T8 use the
   fake). Reqs: U-30, U-31, U-16.
@@ -40,19 +40,19 @@ read the explanation, press E in the tree.
 
 ## Slice 2: the full flow
 
-- [ ] **U-T6 Open file and example.** `Open Python file`, validation and
+- [x] **U-T6 Open file and example.** `Open Python file`, validation and
   messages, `Load an example with a bug` and `example.ts` (user reviews the
   text). Reqs: U-4, U-5, U-6, U-7.
-- [ ] **U-T7 Structure buttons and focus return.** `Move` and `Structure
+- [x] **U-T7 Structure buttons and focus return.** `Move` and `Structure
   actions` groups with labels, `aria-keyshortcuts`, focus return rules.
   Needs N-T5. Reqs: U-22, U-23.
-- [ ] **U-T8 Go to line and edit here.** Go-to-line form, `lineStartOffset`
+- [x] **U-T8 Go to line and edit here.** Go-to-line form, `lineStartOffset`
   and its property test, `Enter` on a treeitem. Needs N-T7. Reqs: U-12, U-20,
   U-24.
-- [ ] **U-T9 Overview, focus, and move sounds.** `P`, `F`, move cue filtered to
+- [x] **U-T9 Overview, focus, and move sounds.** `P`, `F`, move cue filtered to
   own events, volume scaling, `Last sound` caption. Needs S-T7, S-T9, S-T11,
   N-T6. Reqs: U-25, U-34, Table U-1 rows P and F.
-- [ ] **U-T10 Hear it again and speech.** `N` and button, speech sequencing
+- [x] **U-T10 Hear it again and speech.** `N` and button, speech sequencing
   after the cue, `T` toggle, `M` toggle, audio failure message. Needs N-T10,
   S-T12. Reqs: U-32, U-33, U-35.
 - [ ] **U-T11 Real runtime.** Swap the stub for `runCode`, runtime status
@@ -61,13 +61,13 @@ read the explanation, press E in the tree.
 
 ## Slice 3: dialogs, settings, visual design
 
-- [ ] **U-T12 Dialog base, Welcome, Legend.** Native `<dialog>` helper
+- [x] **U-T12 Dialog base, Welcome, Legend.** Native `<dialog>` helper
   (focus in, Escape, focus back); Welcome with stored flag; Legend with
   built-in legend tree and Play buttons. Reqs: U-36, U-37, U-38.
-- [ ] **U-T13 Settings and persistence.** Settings dialog, storage helpers with
+- [x] **U-T13 Settings and persistence.** Settings dialog, storage helpers with
   try and catch, property test. `Speech rate` needs `Speaker.setRate` (add
   via navigation-a11y-spec; ask first). Reqs: U-39, U-40.
-- [ ] **U-T14 Tokens, themes, contrast.** `tokens.ts`, CSS, Default (dark
+- [x] **U-T14 Tokens, themes, contrast.** `tokens.ts`, CSS, Default (dark
   purple and orange, ghost mark) and High contrast, contrast property test,
   reduced-motion rules, reflow at 320 px. Reqs: U-41, U-42, U-43, U-44, U-45,
   U-46.
@@ -77,12 +77,12 @@ read the explanation, press E in the tree.
 
 ## Slice 4: release
 
-- [ ] **U-T16 Build and deploy.** `VITE_NARRATE_URL`, WASM and Pyodide
+- [x] **U-T16 Build and deploy.** `VITE_NARRATE_URL`, WASM and Pyodide
   assets in the build, README deploy steps for the static site and the route.
   Reqs: U-47.
-- [ ] **U-T17 End-to-end and axe.** Playwright keyboard-only test of the whole
+- [x] **U-T17 End-to-end and axe.** Playwright keyboard-only test of the whole
   flow (needs Q-U6); axe in both themes at 200 percent zoom. Reqs: U-48.
-- [ ] **U-T18 Docs and release record.** `docs/a11y-checks.md` template with
+- [x] **U-T18 Docs and release record.** `docs/a11y-checks.md` template with
   what was and was not tested; README with keyboard map, run, test, license;
   list every screen and state. Reqs: U-48, U-49.
 
