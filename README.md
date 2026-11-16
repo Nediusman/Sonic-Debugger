@@ -16,3 +16,4 @@ Built for Kiroween 2026 (Frankenstein category).
 ## License
 
 MIT
+# Sonic-Debugger
