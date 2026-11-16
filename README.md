@@ -4,6 +4,10 @@ A debugging tool for blind and low-vision developers. It turns Python code into 
 
 Built for Kiroween 2026 (Frankenstein category).
 
+## Status
+
+Built so far: parser, sonification, error narration, keyboard navigation and the single-page UI, each from a spec in `.kiro/specs/`. Not done yet: the four extras (trainer, error encyclopedia, hear the fix, haunted mode), the MCP server, the optional bug trail, and checks with a real screen reader. Python runs in the browser through Pyodide, loaded from a CDN, so the first run needs a network connection.
+
 ## Run
 
     npm install
@@ -40,8 +44,22 @@ Type-ahead is not supported. Keys that combine Ctrl, Alt or Meta are never bound
 
 See `src/navigation/README.md`. Release checks are recorded in `docs/a11y-checks.md`.
 
+## Documentation
+
+| Document | Contents |
+| --- | --- |
+| `.kiro/steering/` | Shared rules: context, accessibility, contracts, sonification mapping, testing, workflow |
+| `.kiro/specs/` | Requirements, design and tasks for each of the five modules |
+| `.kiro/agents/`, `.kiro/hooks/` | The 13 custom agents and the Kiro hooks |
+| `src/parser/README.md` | Parser API and loader |
+| `src/sonification/README.md`, `src/sonification/LEGEND.md` | Sound mapping API and the sound legend |
+| `src/narration/README.md` | Runner, narration and the serverless route |
+| `src/navigation/README.md` | Key map, ARIA tree and announcements |
+| `docs/a11y-checks.md` | What was checked with axe and Lighthouse, and what was not |
+| `docs/screen-reader-test-script.md` | Step-by-step NVDA and VoiceOver checks (not yet run) |
+| `docs/pbt-findings.md` | Property-test findings |
+| `docs/*-assumptions.md` | Choices made where the specs were silent |
+
 ## License
 
 MIT
-# Sonic-Debugger
-# Sonic-Debugger
